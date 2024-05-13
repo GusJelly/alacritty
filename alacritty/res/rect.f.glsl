@@ -38,8 +38,10 @@ color_t draw_undercurl(float_t x, float_t y) {
   float_t undercurl = undercurlPosition / 2. * cos((x + 0.5) * 2.
                     * PI / cellWidth) + undercurlPosition - 1.;
 
-  float_t undercurlTop = undercurl + max((underlineThickness - 1.), 0.) / 2.;
-  float_t undercurlBottom = undercurl - max((underlineThickness - 1.), 0.) / 2.;
+  // float_t undercurlTop = undercurl + max((underlineThickness - 1.), 0.) / 2.;
+  // float_t undercurlBottom = undercurl - max((underlineThickness - 1.), 0.) / 2.;
+  float_t undercurlTop = undercurl + underlineThickness / 2.;
+  float_t undercurlBottom = undercurl - underlineThickness / 2.;
 
   // The distance to the curve boundary is always positive when it should
   // be used for AA. When both `y - undercurlTop` and `undercurlBottom - y`
